@@ -1,22 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
+    display: grid;
+/*    overflow: hidden;*/
     margin: 0px;
-    font-family: Arial, sans-serif;
+    grid-template-columns: auto;
+    grid-template-rows: 150px auto;
+    grid-template-areas:
+        "a",
+        "b";
+    height: 100vh;
+    font-family: Poppins, sans-serif;
+    background-image: url(https://time.com/wp-content/uploads/2017/10/229-westerlund-21.jpg?w=2000);
+}
+
+header, #tutorials, #homework, #inspiration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: dotted 1px white;
+    padding: 10px;
 }
 
 header, section {
     padding: 20px;
 }
 
+header {
+    grid-area: a;
+    position: fixed;
+    width: 100vw;
+    height: 150px;
+    background-color: #cbdfbd;
+}
+
+main {
+    grid-area: b;
+    margin-top: 10px;
+    
+}
+
+#tutorials {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #cbdfbd;
+}
+
+#homework {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #cbdfbd;
+}
+
+#inspiration {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F0F0F0;
+}
+
 p, li {
     line-height: 1.5em;
 }
 
-#inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
