@@ -1,0 +1,239 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active { 
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Layout */
+/**********/
+
+aside, footer, header, nav, section, article {
+    display: flex;
+    flex-direction: column;
+}
+body {
+    overflow: hidden;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 100px;
+    grid-template-areas:
+       "left main"
+       "bottom bottom";
+    height: 100vh;
+}
+aside {
+    background-color: #000;
+    grid-area: left;
+}
+header {
+    background: #111;
+    position: fixed;
+    width: calc(100vw - 250px);
+    left: 250px;
+}
+
+main {
+    background: #111;
+    grid-area: main;
+    min-height: calc(350px);
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    z-index: 3;
+}
+
+nav {
+    margin-top: 100px;
+}
+
+footer {
+    background: #222;
+    grid-area: bottom;
+}
+
+/***************************/
+/* Accessories & Florishes */
+/***************************/
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,100%,.3);
+}
+
+/***************************/
+/* Part A: Left Navigation */
+/***************************/
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+#sidebar a {
+    padding-bottom: 20px;
+}
+h1 {
+    padding-bottom: 25px;
+}
+#sidebard p {
+    padding-left: 15px;
+}
+#sidebar a i {
+    margin-right: 15px;
+}
+
+/********************************/
+/* Part B: Header & Nav Styling */
+/********************************/
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 40px;
+    margin-right: 20px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+#upgrade {
+    margin-right: 50px;
+    margin-top: 20px;
+    width: 130px;
+    border: solid 1px white;
+    border-radius: 15px;
+    height: 30px;
+    padding: 5px;
+    padding-left: 25px;
+}
+
+#profile {
+    background-color: #222;
+    border: solid 1px black;
+    border-radius: 15px;
+    height: 30px;
+    width: 130px;
+    margin-right: 50px;
+    margin-top: 20px;
+    padding: 5px;
+    padding-left: 21px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    
+}
+
+nav .selected {
+    border: solid 2px black;
+    border-bottom-color: green;
+}
+
+/*************************/
+/* Part C: Artists Panel */
+/*************************/
+
+article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.artist-card {
+    background-color: #222;
+    width: 18%;
+    padding: 20px;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+ .artist-card div img {
+     width: 100%;
+     border-radius: 100px;
+ }
+
+/**************************/
+/* Part D: Responsive UIs */
+/**************************/
+
+@media screen and (max-width: 1200px) {
+    .artist-card {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "primary" "bottom";
+    }
+
+    .artist-card {
+        width: 45%;
+    }
+
+    aside {
+        display: none;
+    }
+
+    main {
+        grid-area: primary;
+        width: 100vw;
+        height: calc(100vh - 110px);
+    }
+
+    footer {
+        grid-area: bottom;
+        height: 110px;
+    }
+
+    header {
+        position: unset;
+        width: 100vw;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    #upgrade {
+        display: none;
+    }
+
+    #profile {
+        margin-right: 30px;
+    }
+}
+
+
